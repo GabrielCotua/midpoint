@@ -14,7 +14,7 @@ print("\n\n[Midpoint Rule]\n")
 # Midpoint Rule x-values
 x_midpoints = np.linspace(a + delta_x / 2, b - delta_x / 2, n)  # Midpoints of intervals
 print(x_midpoints)
-f_midpoint_values =f(x_midpoints)  # f(x) values at each midpoint
+f_midpoint_values = f(x_midpoints)  # f(x) values at each midpoint
 print(f_midpoint_values)
 
 # Midpoint Rule sum
