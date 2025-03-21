@@ -18,11 +18,11 @@ def main():
     # Given values
     a = 0
     b = 2
-    n = 10
+    n = 20
     delta_x = (b - a) / n
     MidPoint(a, b, n, delta_x)
     Trapezoid(a, b, n, delta_x)
-    Simpson(a, b, 20, delta_x)
+    Simpson(a, b, n, delta_x)
 
 
 
