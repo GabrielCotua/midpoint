@@ -22,7 +22,7 @@ def main():
     delta_x = (b - a) / n
     MidPoint(a, b, n, delta_x)
     Trapezoid(a, b, n, delta_x)
-    Simposon()
+    Simpson(a, b, 20, delta_x)
 
 
 
@@ -56,7 +56,19 @@ def Trapezoid(a, b, n, delta_x): # Trapezoid Method
     print("\n[Trapezoidal integral approximation]:", trapezoid_integral )
 
 def Simpson(a, b, n, delta_x):
-    print("\n\nSimpson Rule")
+    print("\n\n[Simpson Rule]\n")
+    #Simpson Rule x-values
+    x_points = np.linspace(a, b, n+1) # Start, End, Number of instances
+    print(x_points)
+    f_values = f(x_points)
+    print(f_values)
+
+    # Setting odd or even values
+    odd_sum = np.sum(f_values[1:-1:2])  # Suma de los valores en las posiciones impares (x1, x3, x5,...)
+    even_sum = np.sum(f_values[2:-1:2])
+
+    simpson_integral = delta_x / 3 * (f_values[0] + f_values[-1] + 4 * odd_sum + 2 * even_sum)
+    print("[Simpson's integral approximation]:", simpson_integral)
 
 # Runners
 __init__()
