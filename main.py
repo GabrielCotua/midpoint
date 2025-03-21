@@ -23,7 +23,8 @@ def main():
     nn = 20 # Simpson number of iteration 
     # They are separate to show both values that we are looking at the sametime, 
     # to have them all with the same value, modify 'nn' for 'n' and feel free to 
-    # modify 'n' value to the amount of iterations desired.
+    # modify 'n' value to the amount of iterations desired. Don't forget to change
+    # delta_x_simpson for delta_x when making the changes.
     delta_x = (b - a) / n
     delta_x_simpson = (b - a) / nn
     MidPoint(a, b, n, delta_x)
