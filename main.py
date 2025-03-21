@@ -15,14 +15,20 @@ __init__()
 import numpy as np
 
 def main():
+    
     # Given values
-    a = 0
-    b = 2
-    n = 10
+    a = 0 # Lower limit
+    b = 2 # Upper limit
+    n = 10 # Number of iterations
+    nn = 20 # Simpson number of iteration 
+    # They are separate to show both values that we are looking at the sametime, 
+    # to have them all with the same value, modify 'nn' for 'n' and feel free to 
+    # modify 'n' value to the amount of iterations desired.
     delta_x = (b - a) / n
+    delta_x_simpson = (b - a) / nn
     MidPoint(a, b, n, delta_x)
     Trapezoid(a, b, n, delta_x)
-    Simpson(a, b, 20, delta_x)
+    Simpson(a, b, nn, delta_x_simpson)
 
 
 
@@ -34,6 +40,7 @@ def f(x):
 def MidPoint(a, b, n, delta_x): # Midpoint Rule
     print("\n\n[Midpoint Rule]\n")
     # Midpoint Rule x-values
+    # Creates the values evenly separated by the value of n variable
     x_midpoints = np.linspace(a + delta_x / 2, b - delta_x / 2, n)  # Midpoints of intervals
     print(x_midpoints)
     f_midpoint_values = f(x_midpoints)  # f(x) values at each midpoint
@@ -57,7 +64,7 @@ def Trapezoid(a, b, n, delta_x): # Trapezoid Method
 
 def Simpson(a, b, n, delta_x):
     print("\n\n[Simpson Rule]\n")
-    #Simpson Rule x-values
+    # Simpson Rule x-values
     x_points = np.linspace(a, b, n+1) # Start, End, Number of instances
     print(x_points)
     f_values = f(x_points)
@@ -71,5 +78,4 @@ def Simpson(a, b, n, delta_x):
     print("[Simpson's integral approximation]:", simpson_integral)
 
 # Runners
-__init__()
 main()
